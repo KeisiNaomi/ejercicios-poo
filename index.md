@@ -75,6 +75,7 @@ Si la Instancia de Usuario 1 intenta ejecutar el método `rentarScooter()` envia
 R: Al no especificarse un porcentaje mínimo de batería para poder rentar un scooter, técnicamente el usuario podría rentarlo incluso si cuenta con solo un 15% de batería. Sin embargo, para evitar posibles problemas durante el viaje, se podría implementar un filtro que verifique que el scooter tenga un mínimo de batería, por ejemplo, del 20%. Por lo tanto, al aplicar este filtro, la renta del scooter no sería posible, ya que su nivel de batería es inferior al mínimo establecido.
 
 ## Uso de IA en esta actividad
+
 Para la realización de esta práctica no se utilizó inteligencia artificial, unicamente se realizó el cambio de lenguaje de Java a Python en las secciones donde hizo falta, como en la declaración de las entidades con sus atributos y metodos, el diagrama UML y el nuevo código del sistema
 ---
 
