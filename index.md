@@ -19,25 +19,25 @@ Lee detenidamente la siguiente descripción del requerimiento para identificar l
 
 Completa la siguiente estructura identificando los atributos y métodos. Recuerda que los sustantivos suelen representar Clases o Atributos, mientras que los verbos representan Métodos. Utiliza los modificadores de acceso y tipos de datos adecuados en cada línea vacía.
 
-### Entidad 1: `__________________`
+### Entidad 1: `Scooter`
 **Atributos (Acceso privado `-`):**
-* `- _________________ : ___________ ` (identificador)
-* `- _________________ : ___________ ` (batería)
-* `- _________________ : ___________ ` (estado de disponibilidad)
+* `- id : str ` (identificador)
+* `- nivelBateria : int` (batería)
+* `- disponibilidad : bool` (estado de disponibilidad)
 
 **Métodos (Acceso público `+`):**
-* `+ _________________() : boolean ` (iniciar viaje)
-* `+ _________________() : void ` (finalizar viaje)
-* `+ _________________() : void ` (llenar batería)
+* `+ desbloquear() : bool` (iniciar viaje)
+* `+ finalizarViaje() : void ` (finalizar viaje)
+* `+ llenarBateria() : void ` (llenar batería)
 
-### Entidad 2: `__________________`
+### Entidad 2: `Usuario`
 **Atributos (Acceso privado `-`):**
-* `- _________________ : ___________ ` (nombre)
-* `- _________________ : ___________ ` (dinero)
+* `- nombre : str` (nombre)
+* `- saldo : float` (dinero)
 
 **Métodos (Acceso público `+`):**
-* `+ _________________(monto: double) : void ` (agregar saldo)
-* `+ _________________(scooter: Scooter) : boolean ` (rentar scooter)
+* `+ agregarSaldo(monto: float) : void ` (agregar saldo)
+* `+ rentarScooter(scooter: Scooter) : boolean ` (rentar scooter)
 
 ---
 
@@ -47,6 +47,8 @@ A partir de la información estructurada en el paso anterior, elabora un Diagram
 
 *(Herramienta sugerida: Draw.io)*
 
+![Diagrama UML del sistema Scooter](DiagramaUML.png)
+
 ---
 
 ## Paso 4: Instanciación (De la Teoría a la Realidad)
@@ -54,13 +56,13 @@ A partir de la información estructurada en el paso anterior, elabora un Diagram
 El diagrama de clases funciona como un molde estructural. A continuación, define instancias en memoria asignando valores concretos a los atributos de cada objeto para ejemplificar su estado.
 
 **Instancia de Scooter 1**
-* `id = `
-* `nivelBateria = `
-* `estaDisponible = `
+* `id = S-001`
+* `nivelBateria = 15`
+* `estaDisponible = True`
 
 **Instancia de Usuario 1**
-* `nombre = `
-* `saldo = `
+* `nombre = Kitty`
+* `saldo = 100.0`
 
 ---
 
@@ -68,8 +70,12 @@ El diagrama de clases funciona como un molde estructural. A continuación, defin
 
 Justifica tu respuesta a la siguiente interrogante lógica basándote en los conceptos de POO estudiados:
 
-Si la Instancia de Usuario 1 intenta ejecutar el método `rentar()` enviando como parámetro un Scooter que tiene un 15% de batería, ¿cómo debería comportarse internamente la lógica del sistema? 
+Si la Instancia de Usuario 1 intenta ejecutar el método `rentarScooter()` enviando como parámetro un Scooter que tiene un 15% de batería, ¿cómo debería comportarse internamente la lógica del sistema?
 
+R: Al no especificarse un porcentaje mínimo de batería para poder rentar un scooter, técnicamente el usuario podría rentarlo incluso si cuenta con solo un 15% de batería. Sin embargo, para evitar posibles problemas durante el viaje, se podría implementar un filtro que verifique que el scooter tenga un mínimo de batería, por ejemplo, del 20%. Por lo tanto, al aplicar este filtro, la renta del scooter no sería posible, ya que su nivel de batería es inferior al mínimo establecido.
+
+## Uso de IA en esta actividad
+Para la realización de esta práctica no se utilizó inteligencia artificial, unicamente se realizó el cambio de lenguaje de Java a Python en las secciones donde hizo falta, como en la declaración de las entidades con sus atributos y metodos, el diagrama UML y el nuevo código del sistema
 ---
 
 > [!IMPORTANT]
